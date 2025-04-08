@@ -142,14 +142,10 @@ for (i = 0; i < btn.length; i++) {
         }
 
         Check(img1, img2, text1, text2);
-        document.body.classList.add('no-scroll');
+        disableScroll();
         dlg.showModal();
     })
 }
-
-dlg.addEventListener('cancel', () => {
-    document.body.classList.remove('no-scroll');
-});
 
 function Check(img1, img2, text1, text2) {
     dlg.innerHTML = `
@@ -159,8 +155,45 @@ function Check(img1, img2, text1, text2) {
                 <span>${text1}</span>
                 <img src='${img2}' class='img-size';>
                 <span>${text2}</span>
-                <img src="icon/close.png" class='close-size'>
+                <button class='close-size'>
+                    <img src='icon/close.png' class='img-size';>
+                </button>
             </div>
         </div>
     `
+
+    const closeBtn = dlg.querySelector('.close-size');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            dlg.close();
+            enableScroll();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && dlg.open) {
+                dlg.close();
+                enableScroll();
+            }
+        });
+    }
+}
+
+let savedScrollY = 0;
+
+function disableScroll() {
+    savedScrollY = window.scrollY || document.documentElement.scrollTop;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${savedScrollY}px`;
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+    document.body.style.width = '100%';
+}
+
+function enableScroll() {
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.left = '';
+    document.body.style.right = '';
+    document.body.style.width = '';
+    window.scrollTo(0, savedScrollY);
 }

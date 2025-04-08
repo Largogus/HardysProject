@@ -24,7 +24,11 @@ body, html{
 }
 
 body.no-scroll, html.no-scroll {
-    overflow: hidden;
+    overflow: hidden !important;
+}
+
+.no-scroll {
+    overflow: hidden ; 
     overflow-y: hidden;
 }
 
@@ -210,8 +214,15 @@ body.no-scroll, html.no-scroll {
         font-family: 'Times New Roman', Times, serif;
     }
 
-    .close-size {
+    .close-size img{
+        max-width: 100%;
+    }
+
+    .close-size{
         max-width: 15%;
+        background-color: transparent;
+        border: none;
+        background-size: cover;
         object-fit: cover;
         display: block;
     }
@@ -229,8 +240,15 @@ body.no-scroll, html.no-scroll {
         font-family: 'Times New Roman', Times, serif;
     }
 
-    .close-size {
+    .close-size img{
+        max-width: 100%;
+    }
+
+    .close-size{
         max-width: 15%;
+        background-color: transparent;
+        border: none;
+        background-size: cover;
         object-fit: cover;
         display: block;
     }
