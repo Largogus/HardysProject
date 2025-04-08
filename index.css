@@ -1,0 +1,237 @@
+::-webkit-scrollbar {
+    width: 10px; 
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3); 
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5); 
+}
+
+body, html{
+    margin: 0;
+    user-select: none;
+    font-family: 'Arial', serif;
+    background-color: #1E1800;
+    overflow-x: hidden;
+}
+
+body.no-scroll, html.no-scroll {
+    overflow: hidden;
+    overflow-y: hidden;
+}
+
+.web-start {
+    position: relative;
+}
+
+.img1 {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+#text-head {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    max-width: 100%; 
+    z-index: 2; 
+}
+
+.gen-img-class {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gen-img {
+    max-width: 80%;
+    object-fit: cover;
+    content: url("img/gen_img_off.png");
+    transition: 0.3s ease-in-out;
+}
+
+.gen-img:hover {
+    content: url(img/gen_img_on.png);
+    max-width: 82%;
+}
+
+.gen-mus-class {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gen-mus {
+    max-width: 80%;
+    object-fit: cover;
+    transition: 0.3s ease-in-out;
+}
+
+.gen-mus:hover {
+    content: url(img/gen_mus_on.png);
+    max-width: 82%;
+}
+
+.gen-kino-class {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gen-kino {
+    max-width: 80%;
+    object-fit: cover;
+    transition: 0.3s ease-in-out;
+}
+
+.gen-kino:hover {
+    content: url(img/gen_kino_on.png);
+    max-width: 82%;
+}
+
+.gen-art-class {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gen-art {
+    max-width: 78%;
+    object-fit: cover;
+    transition: 0.3s ease-in-out;
+}
+
+.gen-art:hover {
+    max-width: 80%;
+    content: url(img/gen_art_on.png);
+}
+
+.gen-window-class {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gen-window {
+    max-width: 78%;
+    object-fit: cover;
+    transition: 0.3s ease-in-out;
+}
+
+.gen-window:hover {
+    max-width: 80%;
+    content: url(img/gen_window_on.png);
+}
+
+.gen-sotseti-class {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gen-sotseti {
+    max-width: 84%;
+    object-fit: cover;
+    transition: 0.3s ease-in-out;
+}
+
+.gen-sotseti:hover {
+    max-width: 86%;
+    content: url(img/gen_sotset.on.png);
+}
+
+.button {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#choice_dlg {
+    border: 6px solid black;
+    border-bottom: 1vw solid black;
+    width: 80%;
+    height: 80%;
+    overflow-y: scroll;
+}
+
+
+#choice_dlg::backdrop {
+    background: rgba(0, 0, 0, 0.8); 
+    backdrop-filter: blur(4px);  
+}
+
+
+.img-size {
+    max-width: 25%;
+    object-fit: cover;
+}
+
+.gen-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    border: none;
+    flex-direction: column;
+    text-wrap: wrap;
+}
+
+.gen span {
+    max-width: 90%;
+    font-size: 2em;
+}
+
+.close-size {
+    display: none;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .img-size {
+        max-width: 40%;
+        object-fit: cover;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+    .gen span {
+        max-width: 80%;
+        font-size: 1.5em;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .close-size {
+        max-width: 15%;
+        object-fit: cover;
+        display: block;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 425px) {
+    .img-size {
+        max-width: 70%;
+        object-fit: cover;
+    }
+
+    .gen span {
+        max-width: 80%;
+        font-size: 1.25em;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .close-size {
+        max-width: 15%;
+        object-fit: cover;
+        display: block;
+    }
+}
